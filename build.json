@@ -1,0 +1,51 @@
+{ 
+    "authoredBy": null, 
+    "badgeEnabled" : false, 
+    "comment" : "Testing", 
+    "description" : "Build pipeline created using postman", 
+    "project": null,
+    "id": "", 
+    "type": "build", 
+    "name": "devopsAsCode21", 
+    "queueStatus": "enabled", 
+    "triggers": [], 
+    "retentionRules": [ 
+        { "branches": [ "+refs/heads/" ], "artifacts": [ ], "artifactTypesToDelete": [ "FilePath", "SymbolStore"  ], "daysToKeep": 10, "minimumToKeep": 1, "deleteBuildRecord": true, "deleteTestResults": true } ],
+    "path": "\\", 
+    "queue": null,
+    "quality": "definition",
+    "variables": {
+        "system.debug": {
+               "value": "true",
+               "allowOverride": true
+            }
+       },
+       "process": {
+           "type": 2,
+           "queues":{
+
+           },
+            "yamlFilename" : "azure-pipelines.yml"
+       },
+    "repository": {
+           "properties": {
+               "labelSources": "0",
+               "labelSourcesFormat": "$(build.buildNumber)",
+               "reportBuildStatus": "true",
+               "fetchDepth": "0",
+               "cleanOptions": "0",
+               "gitLfsSupport": "false",
+               "skipSyncSource": "false",
+               "checkoutNestedSubmodules": "false",
+               "connectedServiceId": "{{endpointId}}"
+            },
+           "id": "charotAmine/AzureFunctionsCICD",
+           "type": "github",
+           "name": "charotAmine/AzureFunctionsCICD",
+           "url": "https://github.com/charotAmine/AzureFunctionsCICD",
+           "defaultBranch": "master",
+           "clean": null,
+           "checkoutSubmodules": false
+       },
+    "revision": 0
+   }
