@@ -12,6 +12,7 @@ param(
 Function getOrCreateEndpoint($organizationName, $projectName, $endPointName, $type, $url, $personalAccessToken, $headers) {
 
     $endPointUri = "https://dev.azure.com/$organizationName/$projectName/_apis/serviceendpoint/endpoints?endpointNames=$endPointName&api-version=5.1-preview.2"
+    Write-Host "Uri : $endPointUri"
     $endPointResults = Invoke-WebRequest -Method Get -Uri $endPointUri -Headers $headers
     $endPointResults = ($endPointResults.Content | ConvertFrom-Json)
 
