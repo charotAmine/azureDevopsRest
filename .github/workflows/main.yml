@@ -1,0 +1,23 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Azure Devops
+      env:
+        organizationName: charotamine
+        projectName: devopsAsCode
+        endpointType: GitHub
+        urlForEndpoint: https://github.com/charotAmine/AzureFunctionsCICD
+        personalAccessToken: ${{ secrets.personalAccessToken }}
+        endpointName: charotamine
+        pathBuildProperties: ./build.json
+        pathReleaseProperties: ./release.json
+      run: ./createBuildDefinition.ps1
+      shell: pwsh
