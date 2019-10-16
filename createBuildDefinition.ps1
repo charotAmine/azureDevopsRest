@@ -1,12 +1,12 @@
 param(
-    [string] $organizationName,
-    [string] $projectName,
-    [string] $personalAccessToken,
-    [string] $endpointType,
-    [string] $urlForEndpoint,
-    [string] $endpointName,
-    [string] $pathBuildProperties,
-    [string] $pathReleaseProperties
+    [string] $organizationName = $env.organizationName,
+    [string] $projectName = $env.projectName,
+    [string] $personalAccessToken = $env.personalAccessToken,
+    [string] $endpointType = $env.endpointType,
+    [string] $urlForEndpoint = $env.urlForEndpoint,
+    [string] $endpointName = $env.endpointName,
+    [string] $pathBuildProperties = $env.pathBuildProperties,
+    [string] $pathReleaseProperties = $env.pathReleaseProperties
 )
 
 Function getOrCreateEndpoint($organizationName, $projectName, $endPointName, $type, $url, $personalAccessToken, $headers) {
